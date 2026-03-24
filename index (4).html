@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nectar & Quill — Melissa Linn Wolff-Ruibal</title>
+<meta name="description" content="Writer, Narrative Strategist & Creative Director. Complex ideas made reachable.">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & ROOT ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:     #fbe8d6;
+  --parchment: #f2dcc8;
+  --rust:      #dc6d15;
+  --rust-lt:   #e87d2a;
+  --blush:     #e19741;
+  --bark:      #334342;
+  --bark-lt:   #445554;
+  --ink:       #1e2a29;
+  --smoke:     #828b88;
+  --rule:      #d9c4ae;
+  --gold:      #e19741;
+  --gold-lt:   #eaaa55;
+  --deep:      #9f3e19;
+  --teal:      #1D9E75;
+  --purple:    #7F77DD;
+  --blue:      #378ADD;;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAVIGATION ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(51, 67, 66, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(201,180,154,0.2);
+  padding: 14px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--blush);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav-brand span {
+  color: var(--cream);
+  font-style: normal;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rule);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--blush); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--bark);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: var(--rust);
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: 30%;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: var(--blush);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.hero-left {
+  padding: 140px 64px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 20px;
+  opacity: 1;
+}
+
+.hero-name {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 6px;
+  opacity: 1;
+}
+
+.hero-name em {
+  color: var(--blush);
+  font-style: italic;
+}
+
+.hero-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: 36px;
+  opacity: 1;
+}
+
+.hero-statement {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--parchment);
+  margin-bottom: 48px;
+  max-width: 480px;
+  opacity: 1;
+}
+
+.hero-statement strong {
+  font-weight: 600;
+  color: var(--blush);
+  font-style: italic;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 1;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: #1A1A1A;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--rust-lt);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--blush);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid rgba(196,154,42,0.4);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--blush);
+  color: var(--cream);
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 64px 80px 32px;
+  position: relative;
+  z-index: 2;
+  border-left: 1px solid rgba(217,196,174,0.15);
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(225,151,65,0.25);
+  padding: 36px;
+  margin-bottom: 20px;
+  opacity: 1;
+}
+
+.hero-card-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 12px;
+}
+
+.hero-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--parchment);
+  line-height: 1.65;
+}
+
+.hero-card p em {
+  color: var(--blush);
+  font-style: italic;
+}
+
+/* ── ACCENT BAR ── */
+.accent-bar {
+  height: 5px;
+  background: linear-gradient(90deg, var(--deep) 0%, var(--rust) 50%, var(--blush) 100%);
+}
+
+/* ── SECTIONS ── */
+section {
+  padding: 96px 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 0 0 48px;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-title {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.section-title em {
+  color: var(--rust);
+  font-style: italic;
+}
+
+/* ── DIFFERENTIATOR ── */
+.diff {
+  background: var(--parchment);
+}
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.diff-prose {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.diff-prose p { margin-bottom: 20px; }
+
+.diff-prose strong {
+  font-weight: 600;
+  color: var(--rust);
+  font-style: italic;
+}
+
+.diff-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pillar {
+  border-left: 3px solid var(--blush);
+  padding-left: 20px;
+  transition: border-color 0.2s;
+}
+
+.pillar:hover { border-left-color: var(--rust); }
+
+.pillar-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 6px;
+}
+
+.pillar p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--smoke);
+  line-height: 1.6;
+}
+
+/* ── SERVICES ── */
+.services { background: var(--cream); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.service-card {
+  background: var(--parchment);
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--blush);
+  transition: background 0.2s;
+}
+
+.service-card:hover { transform: translateY(-3px); }
+.service-card:hover::before { background: var(--gold); }
+
+.service-icon {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--blush);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.service-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 22px;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.service-subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 16px;
+}
+
+.service-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--smoke);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.service-includes {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.service-includes li {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--smoke);
+  padding: 4px 0 4px 14px;
+  position: relative;
+  border-bottom: 1px solid rgba(201,180,154,0.3);
+}
+
+.service-includes li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--blush);
+}
+
+.service-investment {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+
+/* ── PROJECTS ── */
+.projects { background: var(--bark); }
+.projects .section-label { color: var(--gold); }
+.projects .section-label::after { background: rgba(201,180,154,0.3); }
+.projects .section-title { color: var(--cream); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,180,154,0.12);
+  padding: 36px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.project-card:hover {
+  border-color: rgba(225,151,65,0.4);
+  background: rgba(255,255,255,0.07);
+}
+
+.project-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.project-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--blush);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.project-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(29,158,117,0.3);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.project-link:hover {
+  color: var(--blush);
+  border-color: var(--blush);
+}
+
+/* ── TRUSTED BY ── */
+.trusted { background: var(--parchment); }
+
+.trusted-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.trusted-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 24px;
+  background: var(--cream);
+  border-top: 2px solid var(--blush);
+  transition: border-color 0.2s;
+}
+
+.trusted-item:hover { border-top-color: var(--teal); }
+
+.trusted-name {
+  font-family: 'IM Fell English', serif;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.trusted-role {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  color: var(--smoke);
+  letter-spacing: 0.06em;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--cream); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 56px;
+}
+
+.testimonial {
+  padding: 32px;
+  background: var(--parchment);
+  border-bottom: 3px solid var(--rule);
+  background: var(--parchment);
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.testimonial:hover { border-bottom-color: var(--gold); }
+
+.testimonial::before {
+  content: '\201C';
+  font-family: 'IM Fell English', serif;
+  font-size: 80px;
+  color: var(--blush);
+  opacity: 0.3;
+  position: absolute;
+  top: 8px; left: 20px;
+  line-height: 1;
+}
+
+.testimonial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  padding-top: 24px;
+  font-weight: 300;
+}
+
+.testimonial-attr {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+/* ── DRIFT & DISPLACEMENT FEATURE ── */
+.drift {
+  background: var(--bark);
+  position: relative;
+  overflow: hidden;
+}
+
+.drift::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: var(--blush);
+  opacity: 0.12;
+}
+
+.drift-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.drift .section-label { color: var(--gold); }
+.drift .section-label::after { background: rgba(201,180,154,0.2); }
+.drift .section-title { color: var(--cream); }
+
+.drift-prose {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--parchment);
+  margin-bottom: 32px;
+}
+
+.drift-prose em {
+  color: var(--blush);
+  font-style: italic;
+}
+
+.drift-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.drift-stat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,180,154,0.1);
+  padding: 24px;
+}
+
+.drift-stat-num {
+  font-family: 'IM Fell English', serif;
+  font-size: 36px;
+  color: var(--blush);
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.drift-stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  color: var(--smoke);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── CONTACT ── */
+.contact { background: var(--parchment); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+
+.contact-intro strong {
+  font-weight: 600;
+  color: var(--rust);
+  font-style: italic;
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.contact-item-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  min-width: 60px;
+}
+
+.contact-item-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--smoke);
+}
+
+.contact-item-val a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.contact-item-val a:hover { color: var(--gold); }
+
+/* ── FORM ── */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--smoke);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: #fdf4ec;
+  border: 1px solid var(--rule);
+  padding: 12px 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-submit {
+  background: var(--gold); color: #1A1A1A !important;
+  color: var(--cream);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: none;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  align-self: flex-start;
+}
+
+.form-submit:hover {
+  background: var(--rust-lt);
+  transform: translateY(-1px);
+}
+
+.form-note {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  color: var(--smoke);
+  margin-top: -8px;
+  font-style: italic;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bark);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  border-top: 3px solid var(--gold);
+}
+
+.footer-brand {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold);
+}
+
+.footer-brand span {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: normal;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin-top: 6px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--rule);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--blush); }
+
+.footer-copy {
+  text-align: right;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  color: var(--smoke);
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 14px 24px; }
+  .nav-links { gap: 20px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 120px 32px 60px; }
+  .container { padding: 0 24px; }
+  section { padding: 64px 0; }
+  .diff-grid,
+  .contact-grid,
+  .drift-inner { grid-template-columns: 1fr; gap: 40px; }
+  .diff-grid img { max-width: 240px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .trusted-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  footer { grid-template-columns: 1fr; text-align: left; }
+  .footer-copy { text-align: left; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <a href="#" class="nav-brand"><em>Nectar &amp; Quill</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Nectar &amp; Quill · Est. 2025</div>
+    <h1 class="hero-name">Melissa Linn<br><em>Wolff-Ruibal</em></h1>
+    <div class="hero-title">Writer · Narrative Strategist · Creative Director</div>
+    <p class="hero-statement">
+      Some of the most valuable ideas arrive <strong>dense, unfinished, or difficult to enter.</strong> The work I do begins there.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Schedule a Session</a>
+      <a href="#work" class="btn-secondary">View My Work</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-label">The Throughline</div>
+      <p>Across narrative strategy, editorial development, documentary scripting, brand messaging, and original framework design — one core task: taking <em>raw expertise and complicated subject matter</em> and giving it language, form, and movement on the page.</p>
+    </div>
+    <div class="hero-card" style="animation-delay: 1.3s;">
+      <div class="hero-card-label">Clarity Creates Authority</div>
+      <p>Most founders aren't struggling with ideas. They're struggling with articulation. Your Narrative Voice — Expertly Crafted.</p>
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<!-- ── ABOUT / DIFFERENTIATOR ── -->
+<section class="diff" id="about">
+  <div class="container">
+    <div class="diff-grid">
+      <div>
+        <div class="section-label reveal">About</div>
+        <h2 class="section-title reveal">Why My Work<br>Feels <em>Different</em></h2>
+        <div class="diff-prose reveal">
+          <p>Melissa Linn Wolff helps founders establish themselves more clearly through narrative, voice, and message — using story-driven strategy to translate complex ideas into language that feels human, precise, and unmistakably theirs.</p>
+          <p>Her approach is systems-minded: <strong>clarity first, then authenticity</strong>, then consistent output — brand narratives which build on cohesive content ecosystems, and thought leadership that actually sounds like the person behind it.</p>
+          <p>From content strategy to her work in literary fiction, Melissa is guided by systems thinking — how parts connect, what's missing, what's true. Seventeen years of raising ten children inform the <strong>deep, native structure of narrative voice.</strong></p>
+        </div>
+      </div>
+
+      <div class="reveal" style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding-top:48px;">
+        <div style="position:relative; width:100%; max-width:280px;">
+          <img src="melissa-headshot.jpg"
+            alt="Melissa Linn Wolff-Ruibal — Writer & Narrative Strategist"
+            style="width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center top;
+                   display:block;
+                   border-top: 4px solid var(--rust);
+                   border-bottom: 4px solid var(--gold);
+                   filter: sepia(8%) contrast(1.04);">
+          <div style="margin-top:14px; text-align:center;">
+            <div style="font-family:'IM Fell English',serif; font-style:italic; font-size:16px; color:var(--ink);">Melissa Linn Wolff-Ruibal</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--rust); margin-top:4px;">Writer · Narrative Strategist</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="diff-pillars reveal">
+        <div class="pillar">
+          <div class="pillar-title">Narrative Fingerprint</div>
+          <p>Your voice has a repeatable geometry — how you enter a problem, sequence thought, make leaps, compress complexity. I find it and protect it.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Systems-Minded</div>
+          <p>Content that connects. Strategy that builds. Every piece is designed as part of a larger architecture — not a one-off output.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Complex Subject Translation</div>
+          <p>I step into situations where the material is rich but not yet readable — and find the structure that lets it reach the audience it was meant for.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Cross-Format Fluency</div>
+          <p>Editorial. Script. Framework. Pitch. The same intelligence applied across every format your brand needs to inhabit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label reveal">Services</div>
+    <h2 class="section-title reveal">Strategic Writing &amp;<br><em>Narrative Development</em></h2>
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <span class="service-icon">I.</span>
+        <div class="service-title">Narrative &amp; Voice Intensive</div>
+        <div class="service-subtitle">For Founders</div>
+        <p class="service-desc">For founders experiencing narrative drift, inconsistent messaging, or content that feels disconnected from their authentic voice.</p>
+        <ul class="service-includes">
+          <li>Narrative clarity audit</li>
+          <li>Voice alignment assessment</li>
+          <li>Message alignment framework</li>
+          <li>90-minute strategy session</li>
+          <li>Narrative &amp; Voice Briefing Document</li>
+        </ul>
+        <div class="service-investment">Investment: $750 – $1,250</div>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-icon">II.</span>
+        <div class="service-title">Clarity &amp; Positioning Intensive</div>
+        <div class="service-subtitle">For Brands</div>
+        <p class="service-desc">Offer refinement, brand evolution, and positioning challenges. For brands ready to articulate what makes them unmistakably themselves.</p>
+        <ul class="service-includes">
+          <li>Offer clarity &amp; articulation</li>
+          <li>Messaging precision</li>
+          <li>90-minute strategy session</li>
+          <li>Positioning Clarity Document</li>
+        </ul>
+        <div class="service-investment">Investment: $500 – $1,200</div>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-icon">III.</span>
+        <div class="service-title">Founder Brand Narrative Architecture</div>
+        <div class="service-subtitle">Full System</div>
+        <p class="service-desc">For founders building: thought leadership, positioning, and long-form narrative systems that scale with your voice, not away from it.</p>
+        <ul class="service-includes">
+          <li>Narrative ecosystem design</li>
+          <li>Authority development</li>
+          <li>Strategic voice system</li>
+          <li>Two 2-hour deep-dive sessions</li>
+          <li>Founders Narrative Foundations &amp; Frameworks Document</li>
+        </ul>
+        <div class="service-investment">Investment: $1,500 – $2,500</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<!-- ── PROJECTS ── -->
+<section class="projects" id="work">
+  <div class="container">
+    <div class="section-label reveal">Selected Work</div>
+    <h2 class="section-title reveal">Narrative &amp; Strategy<br><em>Projects</em></h2>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-tag">Framework · Research · 2026</div>
+        <div class="project-title">Drift &amp; Displacement</div>
+        <p class="project-desc">A systems framework for narrative identity preservation — locating, mapping, and protecting the irreducible signal of a voice in an era of generative averaging.</p>
+        <a href="https://ayecaramba1-lgtm.github.io/Drift-and-Displacement/" target="_blank" class="project-link">View Project →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-tag">Voice &amp; Messaging · Ongoing</div>
+        <div class="project-title">Valorem Capital — Content Engine</div>
+        <p class="project-desc">Full content engine development for a private investment firm — communication modules, social messaging, voice architecture, and editorial workflow systems.</p>
+        <a href="YOUR_VALOREM_LINK_HERE" target="_blank" class="project-link">View Project →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-tag">Film &amp; Media · Ongoing</div>
+        <div class="project-title">Greene HD Media Productions</div>
+        <p class="project-desc">Scripts, episode structures, and editorial materials across documentary, branded content, and episodic storytelling formats.</p>
+        <a href="YOUR_GREENE_LINK_HERE" target="_blank" class="project-link">View Project →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-tag">Narrative Development · 2025</div>
+        <div class="project-title">Double Clutch HQ</div>
+        <p class="project-desc">Investor-facing content, visual narrative decks, and strategic communication assets for business and brand initiatives.</p>
+        <a href="YOUR_DOUBLECLUTCH_LINK_HERE" target="_blank" class="project-link">View Project →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<!-- ── DRIFT FEATURE ── -->
+<section class="drift">
+  <div class="container">
+    <div class="drift-inner">
+      <div>
+        <div class="section-label reveal">Featured Framework</div>
+        <h2 class="section-title reveal">The Narrative<br><em>Fingerprint</em></h2>
+        <p class="drift-prose reveal">
+          Voice is not what you say — not even how you say it. It is the <em>repeatable pattern of how your system travels through meaning</em>: how you enter a problem, sequence your thought, make your leaps, compress your complexity, and arrive at resolution. That pattern persists across topics, formats, moods, and time. That is the fingerprint.
+        </p>
+        <a href="https://ayecaramba1-lgtm.github.io/Drift-and-Displacement/" target="_blank" class="btn-secondary reveal">Explore the Framework →</a>
+      </div>
+      <div class="drift-stats reveal">
+        <div class="drift-stat">
+          <div class="drift-stat-num">7</div>
+          <div class="drift-stat-label">Movement Signatures Identified</div>
+        </div>
+        <div class="drift-stat">
+          <div class="drift-stat-num">5</div>
+          <div class="drift-stat-label">Cross-Context Essays Validated</div>
+        </div>
+        <div class="drift-stat">
+          <div class="drift-stat-num">3</div>
+          <div class="drift-stat-label">Independent AI Systems Confirmed</div>
+        </div>
+        <div class="drift-stat">
+          <div class="drift-stat-num">17</div>
+          <div class="drift-stat-label">Years of Practice Behind the Framework</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<!-- ── TRUSTED BY ── -->
+<section class="trusted">
+  <div class="container">
+    <div class="section-label reveal">Trusted By</div>
+    <h2 class="section-title reveal">Clients &amp; <em>Collaborators</em></h2>
+    <div class="trusted-grid reveal">
+      <div class="trusted-item">
+        <img src="https://framerusercontent.com/images/9PQe94ncszhuSKW63zd5biHnimE.png?scale-down-to=1024" alt="Valorem Capital" style="max-height:48px; max-width:100%; object-fit:contain; filter: brightness(0) opacity(0.55); margin-bottom:8px;">
+        <div class="trusted-role">Private Investment · Content Strategy</div>
+      </div>
+      <div class="trusted-item">
+        <img src="https://le-cdn.hibuwebsites.com/b8ab731e88924561a67def57b6af1074/dms3rep/multi/opt/logo-landscape-systems-garden-center-1920w.png" alt="Landscape Systems" style="max-height:48px; max-width:100%; object-fit:contain; filter: brightness(0) opacity(0.55); margin-bottom:8px;">
+        <div class="trusted-role">Garden &amp; Landscape · DFW</div>
+      </div>
+      <div class="trusted-item">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#7A6559; margin-bottom:8px;">Greene<br><span style='color:#B5522A; font-size:10px; letter-spacing:0.2em;'>HD Media</span></div>
+        <div class="trusted-role">Documentary · Branded Content</div>
+      </div>
+      <div class="trusted-item">
+        <div class="trusted-name" style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--smoke);">Double Clutch HQ</div>
+        <div class="trusted-role">Classic Automotive · Content Platform</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label reveal">Testimonials</div>
+    <h2 class="section-title reveal">Words from <em>Clients</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <p class="testimonial-text">Wildly imaginative — her work always over delivers.</p>
+        <div class="testimonial-attr">— Brian Greene · Greene HD Productions</div>
+      </div>
+      <div class="testimonial reveal">
+        <p class="testimonial-text">Wow, this is so much better — you are good!</p>
+        <div class="testimonial-attr">— Charles Covey · RE Developer &amp; Investor</div>
+      </div>
+      <div class="testimonial reveal">
+        <p class="testimonial-text">Your quote here — this spot is reserved for your next client testimonial.</p>
+        <div class="testimonial-attr">— Your Next Client · Co-Developer &amp; Investor</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label reveal">Let's Work Together</div>
+        <h2 class="section-title reveal">Plan, Build &amp; Scale<br>Your <em>Narrative Voice</em></h2>
+        <p class="contact-intro reveal">
+          What is your <strong>narrative fingerprint</strong>, and how close are you to it right now? Let's find out — and build something that sounds unmistakably like you.
+        </p>
+        <div class="contact-detail reveal">
+          <div class="contact-item">
+            <span class="contact-item-label">Email</span>
+            <span class="contact-item-val"><a href="/cdn-cgi/l/email-protection#0b6a726e686a796a66696a3a4b6c666a626725686466"><span class="__cf_email__" data-cfemail="36574f53555744575b54570776515b575f5a1855595b">[email&#160;protected]</span></a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Web</span>
+            <span class="contact-item-val"><a href="https://nectarandquill.com">nectarandquill.com</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">ORCID</span>
+            <span class="contact-item-val">0009-0002-9541-2771</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMSPREE CONTACT FORM -->
+      <div class="reveal">
+        <form action="https://formspree.io/f/xdawrelp" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" required placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" required placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="jane@company.com">
+          </div>
+          <div class="form-group">
+            <label for="interest">I'm interested in</label>
+            <select id="interest" name="interest">
+              <option value="">— Select a service —</option>
+              <option>Narrative &amp; Voice Intensive</option>
+              <option>Clarity &amp; Positioning Intensive</option>
+              <option>Founder Brand Narrative Architecture</option>
+              <option>Other / Let's Talk</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell me about your project</label>
+            <textarea id="message" name="message" placeholder="What are you working on? What feels off? What do you want to build?"></textarea>
+          </div>
+          <p class="form-note">I respond within 48 hours.</p>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-brand">
+    Nectar &amp; Quill
+    <span>R&amp;D Archive · Melissa Linn Wolff-Ruibal · 2026</span>
+  </div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="https://ayecaramba1-lgtm.github.io/Drift-and-Displacement/" target="_blank">Drift &amp; Displacement</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">
+    © 2026 Melissa Linn Wolff-Ruibal<br>
+    All rights reserved.<br>
+    U.S. Provisional Patent App. No. 64/003,848<br>
+    ORCID: 0009-0002-9541-2771
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    
