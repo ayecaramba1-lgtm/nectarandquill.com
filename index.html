@@ -12,18 +12,19 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream:     #F7F2EA;
-  --parchment: #EDE5D5;
-  --rust:      #D85A30;
-  --rust-lt:   #E06B40;
-  --blush:     #D4537E;
-  --bark:      #111111;
-  --bark-lt:   #222222;
-  --ink:       #1A1A1A;
-  --smoke:     #666666;
-  --rule:      #D0C8B8;
-  --gold:      #C49A2A;
-  --gold-lt:   #D4AE40;
+  --cream:     #fbe8d6;
+  --parchment: #f2dcc8;
+  --rust:      #dc6d15;
+  --rust-lt:   #e87d2a;
+  --blush:     #e19741;
+  --bark:      #334342;
+  --bark-lt:   #445554;
+  --ink:       #1e2a29;
+  --smoke:     #828b88;
+  --rule:      #d9c4ae;
+  --gold:      #e19741;
+  --gold-lt:   #eaaa55;
+  --deep:      #9f3e19;
   --teal:      #1D9E75;
   --purple:    #7F77DD;
   --blue:      #378ADD;;
@@ -45,9 +46,9 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(17, 17, 17, 0.96);
+  background: rgba(61, 43, 31, 0.96);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(208,200,184,0.2);
+  border-bottom: 1px solid rgba(201,180,154,0.2);
   padding: 14px 48px;
   display: flex;
   justify-content: space-between;
@@ -104,7 +105,7 @@ nav {
   width: 500px; height: 500px;
   border-radius: 50%;
   background: var(--rust);
-  opacity: 0.08;
+  opacity: 0.10;
   pointer-events: none;
 }
 
@@ -115,7 +116,7 @@ nav {
   width: 350px; height: 350px;
   border-radius: 50%;
   background: var(--blush);
-  opacity: 0.06;
+  opacity: 0.08;
   pointer-events: none;
 }
 
@@ -190,8 +191,8 @@ nav {
 
 .btn-primary {
   display: inline-block;
-  background: var(--rust);
-  color: var(--cream);
+  background: var(--gold);
+  color: #1A1A1A;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   font-weight: 500;
@@ -220,7 +221,7 @@ nav {
   text-transform: uppercase;
   text-decoration: none;
   padding: 14px 28px;
-  border: 1px solid rgba(212,83,126,0.4);
+  border: 1px solid rgba(196,154,42,0.4);
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
 }
@@ -237,12 +238,12 @@ nav {
   padding: 140px 64px 80px 32px;
   position: relative;
   z-index: 2;
-  border-left: 1px solid rgba(208,200,184,0.12);
+  border-left: 1px solid rgba(201,180,154,0.12);
 }
 
 .hero-card {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(208,200,184,0.15);
+  border: 1px solid rgba(225,151,65,0.25);
   padding: 36px;
   margin-bottom: 20px;
   opacity: 1;
@@ -274,7 +275,7 @@ nav {
 /* ── ACCENT BAR ── */
 .accent-bar {
   height: 5px;
-  background: linear-gradient(90deg, var(--rust) 0%, var(--blush) 60%, transparent 100%);
+  background: linear-gradient(90deg, var(--deep) 0%, var(--rust) 50%, var(--blush) 100%);
 }
 
 /* ── SECTIONS ── */
@@ -362,7 +363,7 @@ section {
   transition: border-color 0.2s;
 }
 
-.pillar:hover { border-left-color: var(--purple); }
+.pillar:hover { border-left-color: var(--rust); }
 
 .pillar-title {
   font-family: 'IBM Plex Mono', monospace;
@@ -404,12 +405,12 @@ section {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: var(--rule);
+  background: var(--blush);
   transition: background 0.2s;
 }
 
 .service-card:hover { transform: translateY(-3px); }
-.service-card:hover::before { background: var(--rust); }
+.service-card:hover::before { background: var(--gold); }
 
 .service-icon {
   font-family: 'IM Fell English', serif;
@@ -434,7 +435,7 @@ section {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--rust);
   margin-bottom: 16px;
 }
 
@@ -457,7 +458,7 @@ section {
   color: var(--smoke);
   padding: 4px 0 4px 14px;
   position: relative;
-  border-bottom: 1px solid rgba(208,200,184,0.3);
+  border-bottom: 1px solid rgba(201,180,154,0.3);
 }
 
 .service-includes li::before {
@@ -471,14 +472,14 @@ section {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   font-weight: 500;
-  color: var(--blue);
+  color: var(--gold);
   letter-spacing: 0.06em;
 }
 
 /* ── PROJECTS ── */
 .projects { background: var(--bark); }
-.projects .section-label { color: var(--blush); }
-.projects .section-label::after { background: rgba(208,200,184,0.3); }
+.projects .section-label { color: var(--gold); }
+.projects .section-label::after { background: rgba(201,180,154,0.3); }
 .projects .section-title { color: var(--cream); }
 
 .projects-grid {
@@ -490,13 +491,13 @@ section {
 
 .project-card {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(208,200,184,0.12);
+  border: 1px solid rgba(201,180,154,0.12);
   padding: 36px;
   transition: border-color 0.2s, background 0.2s;
 }
 
 .project-card:hover {
-  border-color: rgba(212,83,126,0.35);
+  border-color: rgba(225,151,65,0.4);
   background: rgba(255,255,255,0.07);
 }
 
@@ -506,7 +507,7 @@ section {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--rust);
   margin-bottom: 12px;
 }
 
@@ -534,9 +535,9 @@ section {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold-lt);
+  color: var(--teal);
   text-decoration: none;
-  border-bottom: 1px solid rgba(184,147,90,0.3);
+  border-bottom: 1px solid rgba(29,158,117,0.3);
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
@@ -563,7 +564,7 @@ section {
   gap: 8px;
   padding: 24px;
   background: var(--cream);
-  border-top: 2px solid var(--rule);
+  border-top: 2px solid var(--blush);
   transition: border-color 0.2s;
 }
 
@@ -596,11 +597,12 @@ section {
   padding: 32px;
   background: var(--parchment);
   border-bottom: 3px solid var(--rule);
+  background: var(--parchment);
   position: relative;
   transition: border-color 0.2s;
 }
 
-.testimonial:hover { border-bottom-color: var(--rust); }
+.testimonial:hover { border-bottom-color: var(--gold); }
 
 .testimonial::before {
   content: '\201C';
@@ -635,7 +637,7 @@ section {
 
 /* ── DRIFT & DISPLACEMENT FEATURE ── */
 .drift {
-  background: var(--ink);
+  background: var(--bark);
   position: relative;
   overflow: hidden;
 }
@@ -646,8 +648,8 @@ section {
   top: -60px; right: -60px;
   width: 300px; height: 300px;
   border-radius: 50%;
-  background: var(--rust);
-  opacity: 0.07;
+  background: var(--blush);
+  opacity: 0.12;
 }
 
 .drift-inner {
@@ -659,8 +661,8 @@ section {
   z-index: 2;
 }
 
-.drift .section-label { color: var(--blush); }
-.drift .section-label::after { background: rgba(208,200,184,0.2); }
+.drift .section-label { color: var(--gold); }
+.drift .section-label::after { background: rgba(201,180,154,0.2); }
 .drift .section-title { color: var(--cream); }
 
 .drift-prose {
@@ -685,14 +687,14 @@ section {
 
 .drift-stat {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(208,200,184,0.1);
+  border: 1px solid rgba(201,180,154,0.1);
   padding: 24px;
 }
 
 .drift-stat-num {
   font-family: 'IM Fell English', serif;
   font-size: 36px;
-  color: var(--purple);
+  color: var(--blush);
   font-style: italic;
   margin-bottom: 4px;
 }
@@ -760,11 +762,11 @@ section {
 }
 
 .contact-item-val a {
-  color: var(--blue);
+  color: var(--teal);
   text-decoration: none;
 }
 
-.contact-item-val a:hover { color: var(--rust); }
+.contact-item-val a:hover { color: var(--gold); }
 
 /* ── FORM ── */
 form {
@@ -791,7 +793,7 @@ form {
 .form-group input,
 .form-group select,
 .form-group textarea {
-  background: var(--cream);
+  background: #fdf4ec;
   border: 1px solid var(--rule);
   padding: 12px 14px;
   font-family: 'IBM Plex Mono', monospace;
@@ -806,7 +808,7 @@ form {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--rust);
+  border-color: var(--gold);
 }
 
 .form-group textarea {
@@ -821,7 +823,7 @@ form {
 }
 
 .form-submit {
-  background: var(--rust);
+  background: var(--gold); color: #1A1A1A !important;
   color: var(--cream);
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
@@ -863,7 +865,7 @@ footer {
   font-family: 'IM Fell English', serif;
   font-style: italic;
   font-size: 22px;
-  color: var(--blush);
+  color: var(--gold);
 }
 
 .footer-brand span {
@@ -1291,3 +1293,4 @@ footer {
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
+    
